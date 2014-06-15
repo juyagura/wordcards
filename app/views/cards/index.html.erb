@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>Cards</h1>
+</div>
+
+<p><a href="/cards/new" class="btn btn-primary">Add a New Card</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Definition</th>
+      <th>Learned</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.word %></td>
+        <td><%= card.definition %></td>
+        <td><%= card.learned %></td>
+        <td><%= card.user_id %></td>
+        <td>
+          <a href="/cards/<%= card.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/cards/<%= card.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_card/<%= card.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

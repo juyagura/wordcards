@@ -4,7 +4,8 @@
 
 <div class="jumbotron">
   <h1><%= @card.word.titleize %></h1>
-  <p><a href="/cards/def/<%= @card.id %>" class="btn btn-primary">Show Definition</a></p>
+  <p id="word_definition"><%= @card.definition %></p>
+  <p><a href="/cards/<%= @card.id %>" class="btn btn-primary">Hide Definition</a></p>
   <p>
     <% if @card.learned == true %>
       <a href="/cards/<%= @card.id %>/unlearn" class="btn btn-default">Unlearn</a>

@@ -10,10 +10,15 @@ Rails.application.routes.draw do
   # READ
   get('/cards', { :controller => 'cards', :action => 'index' })
   get('/cards/:id', { :controller => 'cards', :action => 'show' })
+  get('/cards/def/:id', { :controller => 'cards', :action => 'defshow' })
+  get('/random_card', { :controller => 'cards', :action => 'random' })
 
   # UPDATE
   get('/cards/:id/edit', { :controller => 'cards', :action => 'edit' })
   get('/update_card/:id', { :controller => 'cards', :action => 'update' })
+  get('/cards/:id/learned', { :controller => 'cards', :action => 'learned' })
+  get('/cards/:id/unlearn', { :controller => 'cards', :action => 'unlearn' })
+  get('/learned_list', { :controller => 'cards', :action => 'learned_list'})
 
   # DELETE
   get('/delete_card/:id', { :controller => 'cards', :action => 'destroy' })
